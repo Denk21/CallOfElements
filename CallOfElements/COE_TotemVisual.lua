@@ -192,7 +192,9 @@ function COE_Totem:ConfigureTotemButtons()
 		
 		-- increase button counter
 		-- ------------------------
-		buttons[totem.Element] = buttons[totem.Element] + 1;
+		if( totem.Element == "Earth" or totem.Element == "Fire" or totem.Element == "Water" or totem.Element == "Air") then
+			buttons[totem.Element] = buttons[totem.Element] + 1;
+		
 		
 		local order = COE_DisplayedTotems[totem.SpellName].Order;
 		local button;		
@@ -271,6 +273,8 @@ function COE_Totem:ConfigureTotemButtons()
 				COE.CleansingTotems.Tremor.Button = button;
 			end
 		end	
+		end
+		
 	end
 	
 	-- invalidate all frames
